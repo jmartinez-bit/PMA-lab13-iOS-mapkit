@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapKitLab13" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gm3-L1-yRy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="754"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="754" id="n2W-8h-fSs"/>
+                                </constraints>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9zw-dL-zXJ">
+                                <rect key="frame" x="95" y="821" width="224" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="BUH-Hw-oVk"/>
+                                    <constraint firstAttribute="width" constant="224" id="NwS-aY-xcS"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satelite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="cambiarVisualizacionMapa:" destination="BYZ-38-t0r" eventType="valueChanged" id="U68-0v-OwS"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gm3-L1-yRy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1hz-Gs-7fv"/>
+                            <constraint firstItem="Gm3-L1-yRy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3Ww-KC-Ul3"/>
+                            <constraint firstItem="9zw-dL-zXJ" firstAttribute="top" secondItem="Gm3-L1-yRy" secondAttribute="bottom" constant="23" id="Nf7-HI-Rpv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gm3-L1-yRy" secondAttribute="trailing" id="SLz-1l-prO"/>
+                            <constraint firstItem="9zw-dL-zXJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="co8-Wn-tzt"/>
+                            <constraint firstItem="Gm3-L1-yRy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dRI-Bb-9ws"/>
+                            <constraint firstItem="Gm3-L1-yRy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gpf-4c-WDD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapa" destination="Gm3-L1-yRy" id="1F3-2B-ezm"/>
+                        <outlet property="selector" destination="9zw-dL-zXJ" id="r6f-Bg-rY4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2463768115942031" y="112.5"/>
+        </scene>
+    </scenes>
+</document>
